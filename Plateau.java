@@ -43,8 +43,7 @@ public class Plateau {
                     	
                     	if(nombreBateau != 17)
                     	{
-                    		placerBateau(j);
-                    			
+                    		placerBateau(j);		
                     	}		
                     	
                     	else if (nombreBateau == 17 && nombreBateauCoule != 17)
@@ -70,14 +69,14 @@ public class Plateau {
                     mesBoutons[taille].setText(""+numero);
                     mesBoutons[taille].setBackground(Color.darkGray);
                     mesBoutons[taille].setForeground(Color.YELLOW);
-                    mesBoutons[taille].setBorder(BorderFactory.createEtchedBorder(Color.green, Color.white));
+                    mesBoutons[taille].setBorder(BorderFactory.createEtchedBorder(Color.green, Color.cyan));
                     numero++;
                 }
                 if(j==0&&i!=0) {
                     mesBoutons[taille].setText(""+(char)lettre);
                     mesBoutons[taille].setBackground(Color.darkGray);
                     mesBoutons[taille].setForeground(Color.YELLOW);
-                    mesBoutons[taille].setBorder(BorderFactory.createEtchedBorder(Color.green, Color.white));
+                    mesBoutons[taille].setBorder(BorderFactory.createEtchedBorder(Color.green, Color.cyan));
                     lettre++;
                 }
                 if(i>0&&j>0) {
@@ -90,6 +89,8 @@ public class Plateau {
         }
         
         total.add(grille);
+        
+       
     }
     
     public JPanel getTotal() {
@@ -121,6 +122,7 @@ public class Plateau {
     		if(bouton.getText() == "Bateau")
     		{
     			bouton.setText("Touché");
+    			bouton.setBackground(Color.RED);
     			nombreBateauCoule++;
     		}
     	
@@ -131,6 +133,7 @@ public class Plateau {
     	else
     		{
     			bouton.setText("Raté");
+    			bouton.setBackground(Color.WHITE);
     		}
     	
     	}
@@ -145,6 +148,8 @@ public class Plateau {
         frame.setContentPane(plateau.getTotal());
         frame.pack();
         frame.setVisible(true);
+       
+        
     }
     
 }
